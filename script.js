@@ -1,8 +1,17 @@
-var computerChoice = Math.random();
 
-var R = " Rock";
-var P = " Paper";
-var S = " Scissors";
+var computerChoice = getRandom();
+
+if (computerChoice < 0.34) {
+    computerChoice = "Rock";
+} else if (computerChoice < 0.67) {
+    computerChoice = "Paper";
+} else {
+    computerChoice = "Scissors";
+} console.log(alert("Computer chose:" + computerChoice))
+
+var R = "Rock";
+var P = "Paper";
+var S = "Scissors";
 
 function playerLoses() {
     console.log("Aw, too bad. You lose!");
@@ -15,9 +24,9 @@ function playerWins() {
 }
 
 function getRandom() {
-    return Math.random();
-
+    prompt("Ready? Rock, Paper, or Scissors? (Press R, P, or S ")
 }
+
 
 alert("Want to play Rock Paper Scissors?");
 
@@ -25,15 +34,6 @@ alert("Want to play Rock Paper Scissors?");
 
 let playerChoice = prompt("Ready? Rock, Paper, or Scissors? (Press R, P, or S ");
 
-
-
-if (computerChoice < 0.34) {
-    computerChoice = " Rock";
-} else if (computerChoice > 0.34 < 0.67) {
-    computerChoice = " Paper";
-} else {
-    computerChoice = " Scissors";
-} 
     console.log(alert("Computer chose:" + computerChoice))
 
 
@@ -43,18 +43,27 @@ if (playerChoice == computerChoice)
     window.confirm("Rematch?");
 
 
-if (playerChoice === "R")(computerChoice === " Scissors") {
-    playerWins;
-} else if (playerChoice === "R")(computerChoice === " Paper") {
-    playerLoses;
-} else if (playerChoice === "P")(computerChoice === " Rock") {
-    playerWins;
-} else if (playerChoice === "P")(computerChoice === " Scissors") {
-    playerLoses;
-} else if (playerChoice === "S")(computerChoice === " Paper") { 
-    playerWins;
-} else (playerChoice === "S")(computerChoice === " Rock") {
-    playerLoses;
+if (playerChoice === "R" && computerChoice === "Scissors") {
+    playerWins();
+} else if (playerChoice === "R" && computerChoice === "Paper") {
+    playerLoses();
+} else if (playerChoice === "P" && computerChoice === " Rock") {
+    playerWins();
+} else if (playerChoice === "P" && computerChoice === " Scissors") {
+    playerLoses();
+} else if (playerChoice === "S" && computerChoice === " Paper") { 
+    playerWins();
+} else if (playerChoice === "S" && computerChoice === " Rock") {
+    playerLoses();
+} else {
+    console.log("It's a tie!!");
+
 }
-    console.log(window.confirm("Rematch?")) 
-    prompt("Ready? Rock, Paper, or Scissor? (Press R, P, or S");
+
+var playAgain = true;
+
+while (playAgain) {
+
+    playAgain = confirm("Rematch?");
+}
+    console.log("Thanks for playing!");
